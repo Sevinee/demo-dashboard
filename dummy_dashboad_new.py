@@ -49,7 +49,7 @@ try:
     pred_yest_val = forecast_yesterday.loc[forecast_yesterday['date'].dt.date == yesterday, 'predicted_usd_idr'].values[0]
     actual_today_val = actual_data.loc[actual_data['date'].dt.date == datetime.today().date(), 'value'].values[0]
     error = actual_today_val - pred_yest_val
-    delta_str = f"{error:+,.2f} dari aktual"
+    delta_str = f"selisih {error:+,.2f} dari aktual"
 
     st.metric("Prediksi Kemarin", f"Rp {pred_yest_val:,.2f}", delta=delta_str)
 except:
